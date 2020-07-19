@@ -1,0 +1,24 @@
+.logo {
+    margin: 25px;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 29px;
+    letter-spacing: 1.8px;
+    word-spacing: 4.6px;
+    color: #14426C;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: capitalize;
+}
+.margin-auto{
+    margin: auto;
+}
+
+.padding-0{
+    padding: 0;
+}
+
+.classifie-btn{
+    float: right;
+}
