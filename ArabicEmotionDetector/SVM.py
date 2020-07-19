@@ -1,12 +1,12 @@
-from sklearn.feature_extraction.text import CountVectorizer # to create Bag of words
+from sklearn.feature_extraction.text import CountVectorizer  # to create Bag of words
 from sklearn.model_selection import train_test_split  # for splitting data
-from sklearn.preprocessing import LabelEncoder # to convert classes to number
-from sklearn.metrics import accuracy_score # to calculate accuracy
-import nltk # for processing texts
+from sklearn.preprocessing import LabelEncoder  # to convert classes to number
+from sklearn.metrics import accuracy_score  # to calculate accuracy
+import nltk  # for processing texts
 import pandas as pd
 from sklearn.svm import LinearSVC
 
-from Preprocessing import clean_text
+from .Preprocessing import clean_text
 
 nltk.download('punkt')
 nltk.download('stopwords')

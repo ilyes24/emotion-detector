@@ -7,7 +7,7 @@ import nltk # for processing texts
 import pandas as pd
 from nltk.corpus import stopwords # list of stop words
 
-from Preprocessing import clean_text
+from .Preprocessing import clean_text
 
 nltk.download('punkt')
 nltk.download('stopwords')
