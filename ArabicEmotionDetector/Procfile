@@ -1,0 +1,1 @@
+'web: gunicorn ArabeEmotionDetector.wsgi --log-file -' 
