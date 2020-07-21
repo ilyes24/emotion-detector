@@ -1,0 +1,60 @@
+.container{
+    margin-top: 10px;
+    animation: 1s ease-out 0s 1 zoomIn;
+}
+blockquote {
+    margin: auto;
+  background: #f9f9f9;
+  border-left: 6px solid #ccc;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote {
+  display: inline;
+}
+
+#algo {
+font-family: Georgia, serif;
+font-size: 25px;
+letter-spacing: 2px;
+word-spacing: 2px;
+color: #000000;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+}
+
+#Result {
+font-family: "Comic Sans MS", cursive, sans-serif;
+font-size: 31px;
+letter-spacing: 1.2px;
+word-spacing: 1.4px;
+color: #000000;
+font-weight: normal;
+text-decoration: none;
+font-style: normal;
+font-variant: normal;
+text-transform: capitalize;
+}
+
+.margin-top-10{
+    margin-top: 20px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.min-widh{
+    min-width: 500px;
+}
