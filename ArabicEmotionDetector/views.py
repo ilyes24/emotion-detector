@@ -1,8 +1,7 @@
 from django.shortcuts import render
-import ArabicEmotionDetector.Preprocessing as pre
-import ArabicEmotionDetector.NaiveBayes as nb
-import ArabicEmotionDetector.SVM as svm
-import ArabicEmotionDetector.KNN as knn
+from .KNN import knn
+from .SVM import svm
+from .NaiveBayes import naive_bayes
 
 
 def index(request):
@@ -15,8 +14,12 @@ def index(request):
         text_input = request.POST['textInput']
         algorithm = request.POST['Algorithm']
 
-        # pre-processing phase
-        steamed_text = pre.clean_text(text=text_input)
+        result = None
+        if algorithm == 'KNN':
+            result = knn(text_input)
+        elif algorithm == 'SVM':
+            result = svm(text_input)
+        elif algorithm == 'Naive':
+            result = naive_bayes(text_input)
 
-
-        return render(request, 'index.html', {'result': 'true'})
+        return render(request, 'result.html', {'result': result})
