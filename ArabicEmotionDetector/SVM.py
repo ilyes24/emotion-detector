@@ -10,14 +10,15 @@ from sklearn.preprocessing import LabelEncoder  # to convert classes to number
 from sklearn.svm import SVC
 
 from .Preprocessing import clean_text
+from .settings import BASE_DIR
 
 
 def svm(test_text):
-    if os.path.isfile('SVMmodel.joblib') and os.path.isfile('SVMencoder.joblib') and os.path.isfile('SVMcount.joblib'):
-        loadedmodel = load('SVMmodel.joblib')
-        loaded_encoder = load('SVMencoder.joblib')
-        loaded_count = load('SVMcount.joblib')
-        max_features = 200000
+    this_dir = os.path.join(BASE_DIR, 'ArabicEmotionDetector')
+    if os.path.isfile(os.path.join(this_dir, 'SVMmodel.joblib')) and os.path.isfile(os.path.join(this_dir, 'SVMencoder.joblib')) and os.path.isfile(os.path.join(this_dir, 'SVMcount.joblib')):
+        loadedmodel = load(os.path.join(this_dir, 'SVMmodel.joblib'))
+        loaded_encoder = load(os.path.join(this_dir, 'SVMencoder.joblib'))
+        loaded_count = load(os.path.join(this_dir, 'SVMcount.joblib'))
         test_vector = loaded_count.transform(test_text)
         test_vector = test_vector.toarray()
         # encodeing predict class
@@ -25,7 +26,7 @@ def svm(test_text):
         return text_predict_class[0]
     else:
         # download data
-        data = pd.read_csv('data.csv')
+        data = pd.read_csv(os.path.join(BASE_DIR, 'ArabicEmotionDetector', 'data.csv'))
         data['text'] = data['text'].apply(clean_text)
         # create bag of words
         max_features = 200000
