@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="{% static "index.css" %}">
 </head>
 <body>
-<div class="container">
-    <div class="row logo">
-        <h1 class="margin-auto">Emotion Detector</h1>
-    </div>
+<div class="outer">
+<div class="middle">
+<div class="inner">
+    <div class="container">
 
     <div class="row">
         <div class="col-10 card margin-auto shadows">
             <div class="card-body">
+                <div id="logo" class="row logo">
+                    <h1 class="margin-auto">Emotion Detector</h1>
+                </div>
                 <form method="post">
                     {% csrf_token %}
                     <div class="form-group">
@@ -38,7 +41,7 @@
                     </div>
                     <br>
                     <div class="classifie-btn">
-                        <button  class="btn btn-primary">Classifie</button>
+                        <button onclick="classifie()" class="btn btn-primary">Classifie</button>
                     </div>
                 </form>
                 {% if result %}
@@ -50,6 +53,9 @@
         </div>
     </div>
 
+</div>
+</div>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
