@@ -64,3 +64,23 @@ body {
 .classifie-btn{
     float: right;
 }
+
+.margin-right-0{
+    margin-right: 0;
+}
+
+input{
+    margin-left: 16px;
+}
+ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li {
+   list-style-type: none;
+}
+
+.margin-left-0{
+    margin-left: 0;
+}
