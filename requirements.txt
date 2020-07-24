@@ -4,5 +4,6 @@ pandas~=1.0.5
 joblib~=0.16.0
 sklearn~=0.0
 scikit-learn~=0.23.1
-gunicorn
-whitenoise
+gunicorn==20.0.4
+whitenoise==5.1.0
+django-heroku==0.3.1
