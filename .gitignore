@@ -642,9 +642,6 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# Dataset
-data.csv
-
 # dumped models
 *.joblib
 
