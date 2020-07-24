@@ -22,33 +22,15 @@
                 </div>
                 <form method="post">
                     {% csrf_token %}
-                    <div class="form-group">
-                        <textarea name="textInput" rows="8" type="text" class="form-control" id="textInput" aria-describedby="arabicTextInput" placeholder="Enter your text to classifie"></textarea>
-                    </div>
-
-                    <div style="padding-left: 0;" class="padding-0 custom-control custom-control-inline">Choose an algorithm:</div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="SVM" value="SVM" name="Algorithm" class="custom-control-input">
-                        <label class="custom-control-label" for="SVM">SVM</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="KNN" value="KNN" name="Algorithm" class="custom-control-input">
-                        <label class="custom-control-label" for="KNN">KNN</label>
-                    </div>
-                    <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="Naive" value="Naive" name="Algorithm" class="custom-control-input">
-                        <label class="custom-control-label" for="Naive">Naive Bayes</label>
-                    </div>
-                    <br>
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field }}
+                        </div>
+                    {% endfor %}
                     <div class="classifie-btn">
                         <button onclick="classifie()" class="btn btn-primary">Classifie</button>
                     </div>
                 </form>
-                {% if result %}
-                <div class="result">
-                    <p>here the results</p>
-                </div>
-                {% endif %}
             </div>
         </div>
     </div>

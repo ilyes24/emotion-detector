@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html dir="rtl" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,13 +23,20 @@
 
     </div>
     <div class="row margin-top-10">
-        <p id="algo" class="margin-auto">Algorithm used: {{ algorithm }}</p>
+        <p id="algo" class="margin-auto">Algorithm used: {{ algorithm }} {% if accuracy %} <small class="accuracy">{{ accuracy }}</small> {% endif %}</p>
     </div>
 
     <div class="row margin-top-20">
         <p id="algo" class="margin-auto">Text class: {{ result }}</p>
     </div>
-
+    <div dir="ltr">
+        <a href="javascript:history.back()" class="btn-back">
+            <svg class="svg-back" width="10" viewBox="0 0 10 6">
+                <path d="M5 4.3L.85.14c-.2-.2-.5-.2-.7 0-.2.2-.2.5 0 .7L5 5.7 9.85.87c.2-.2.2-.5 0-.7-.2-.2-.5-.2-.7 0L5 4.28z" stroke="none"></path>
+            </svg>
+            <span class="text-back">Try Again</span>
+        </a>
+    </div>
             </div>
         </div>
     </div>
