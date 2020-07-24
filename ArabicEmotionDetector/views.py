@@ -1,35 +1,39 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-
-from .KNN import knn
-from .SVM import svm
-from .NaiveBayes import naive_bayes
+from .data_preparation import predict_knn, predict_svm, predict_naive_bayes, lexicon_dictionary
+from .forms import TextInputForm
 
 
 def index(request):
     if request.method == "GET":
-        context = {}
+        form = TextInputForm()
+        context = {'form': form}
         return render(request, 'index.html', context)
 
     if request.method == "POST":
         # get inputs from FORM
         text_input = request.POST['textInput']
-        algorithm = request.POST['Algorithm']
+        algorithm = request.POST['algorithm']
 
         result = None
+        accuracy = None
         if algorithm == 'KNN':
-            result = knn([text_input])
+            result = predict_knn([text_input])
+            accuracy = '50.89%'
         elif algorithm == 'SVM':
-            result = svm([text_input])
-        elif algorithm == 'Naive':
-            result = naive_bayes([text_input])
+            result = predict_svm([text_input])
+            accuracy = '81.12%'
+        elif algorithm == 'Naive Bayes':
+            result = predict_naive_bayes([text_input])
+            accuracy = '80.67%'
+        elif algorithm == 'Lexicon Dictionary':
+            result = lexicon_dictionary([text_input])
 
-        context = {'result': result, 'text_input': text_input, 'algorithm': algorithm}
+        context = {'result': result, 'text_input': text_input, 'algorithm': algorithm, 'accuracy': accuracy}
         return render(request, 'result.html', context)
 
 
 def result_view(request):
-    r = request
-    i = 20
     return render(request, 'index.html')
+
