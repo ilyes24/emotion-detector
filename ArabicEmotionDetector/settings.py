@@ -28,7 +28,7 @@ SECRET_KEY = 'kef3xxf4duv+*wl-@+8)5lti%dtaclr$^b@qa1_u=fup^d(!bs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ar-emotion.herokuapp.com']
 
 
 # Application definition
